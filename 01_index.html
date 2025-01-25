@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full_Life Created by KermitWeb</title>
+  <title>Zombie Apocalypse Map</title>
   
-  <!-- Update CSS file reference -->
+  <!-- Link Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  
+  <!-- Link to Custom CSS -->
   <link rel="stylesheet" href="02_styles.css">
-  
-  <style>
-    body {
-      background: green; /* For testing - inline CSS */
-    }
-  </style>
 </head>
 <body>
-  <div id="map">
-    <div id="player" style="top: 50%; left: 50%;"></div>
-    <div id="health-bar-container">
-      <div id="health-bar"></div>
-    </div>
-    <div id="timer">Survival Time: 0s</div>
+  <div id="map"></div> <!-- Leaflet map container -->
+  <div id="player" style="top: 50%; left: 50%;"></div>
+  <div id="health-bar-container">
+    <div id="health-bar"></div>
   </div>
-  
-  <!-- Update JS file reference -->
+  <div id="timer">Survival Time: 0s</div>
+
+  <!-- Leaflet.js Script -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Link to Custom JS -->
   <script src="03_script.js"></script>
-  
-  <script>
-    console.log('Inline JS is running!'); /* For testing */
-  </script>
 </body>
 </html>
