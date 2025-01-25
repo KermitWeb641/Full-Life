@@ -1,4 +1,4 @@
-console.log('Script loaded successfully!');
+console.log('External script.js is loaded and running!');
 
 const map = document.getElementById('map');
 const player = document.getElementById('player');
@@ -18,6 +18,7 @@ setInterval(() => {
 
 // Move player with arrow keys
 document.addEventListener('keydown', (e) => {
+  console.log(`Key pressed: ${e.key}`); // Debugging log
   const rect = player.getBoundingClientRect();
   switch (e.key) {
     case 'ArrowUp':
@@ -43,6 +44,7 @@ function spawnZombie() {
   zombie.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
   map.appendChild(zombie);
   zombies.push(zombie);
+  console.log('Zombie spawned!'); // Debugging log
 }
 
 setInterval(spawnZombie, 2000);
