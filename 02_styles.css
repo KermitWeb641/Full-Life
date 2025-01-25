@@ -9,8 +9,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('https://via.placeholder.com/1920x1080.png?text=City+Map') no-repeat center center;
-  background-size: cover;
+  background: #222; /* Solid background for testing */
   overflow: hidden;
 }
 
@@ -18,8 +17,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: url('https://via.placeholder.com/50.png?text=Player') no-repeat center center;
-  background-size: cover;
+  background: red; /* Temporary color for debugging */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,8 +27,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: url('https://via.placeholder.com/50.png?text=Zombie') no-repeat center center;
-  background-size: cover;
+  background: green; /* Temporary color for debugging */
   animation: zombieWalk 3s infinite alternate;
 }
 
