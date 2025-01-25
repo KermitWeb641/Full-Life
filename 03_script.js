@@ -1,6 +1,14 @@
-console.log('External script.js is loaded and running!');
+console.log('External script is running!');
 
-const map = document.getElementById('map');
+const map = L.map('map').setView([51.505, -0.09], 13); // Initialize Leaflet map
+
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Elements for gameplay
 const player = document.getElementById('player');
 const healthBar = document.getElementById('health-bar');
 const timer = document.getElementById('timer');
@@ -18,7 +26,7 @@ setInterval(() => {
 
 // Move player with arrow keys
 document.addEventListener('keydown', (e) => {
-  console.log(`Key pressed: ${e.key}`); // Debugging log
+  console.log(`Key pressed: ${e.key}`);
   const rect = player.getBoundingClientRect();
   switch (e.key) {
     case 'ArrowUp':
@@ -42,9 +50,9 @@ function spawnZombie() {
   zombie.classList.add('zombie');
   zombie.style.left = `${Math.random() * (window.innerWidth - 50)}px`;
   zombie.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
-  map.appendChild(zombie);
+  document.body.appendChild(zombie);
   zombies.push(zombie);
-  console.log('Zombie spawned!'); // Debugging log
+  console.log('Zombie spawned!');
 }
 
 setInterval(spawnZombie, 2000);
